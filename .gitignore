@@ -1,6 +1,7 @@
 node_modules/
 dist/
 temp/
+log/
 .idea/
 coverage
 .env

@@ -21,7 +21,7 @@ div {
   width: 3.125rem;
   height: 3.125rem;
   border-radius: 1.5625rem;
-  background: #0000bb;
+  background: #2255ff;
   top: 0.3125rem;
   right: 0.3125rem;
   line-height: 3.125rem;
@@ -43,11 +43,8 @@ div {
   display: inline-block;
 }
 
-#logo {
-  height: 10%;
-}
-
 #logo img{
+  height: 40px;
   margin: 10px;
 }
 
@@ -140,7 +137,7 @@ div {
   color: #fff;
   letter-spacing: 0.015rem;
   line-height: 1.3125rem;
-  background: #0000bb;
+  background: #2255ff;
   border-radius: 1.25rem;
   border-bottom-right-radius: 0;
   text-align: left;
@@ -166,7 +163,7 @@ div {
   right: 0;
   height: 0.375rem;
   width: 0.5rem;
-  background: #0000bb;
+  background: #2255ff;
 }
 
 .from-user .message-inner:after {
@@ -227,7 +224,7 @@ div {
 }
 
 #textInput.underline {
-  border-bottom: 2px solid #0000bb;
+  border-bottom: 2px solid #2255ff;
 }
 
 ::-webkit-input-placeholder {
