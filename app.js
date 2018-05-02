@@ -17,10 +17,22 @@
 'use strict';
 
 var express = require('express'); // app server
+var basicAuth = require('basic-auth-connect');
 var bodyParser = require('body-parser'); // parser for post requests
 var watson = require('watson-developer-cloud'); // watson sdk
+var log4js = require('log4js');
+
+log4js.configure('log4js.config.json');
+
+var logger = log4js.getLogger('system');
+
+logger.info('started');
 
 var app = express();
+
+// Basic Auth
+
+app.use(basicAuth(process.env.USERNAME, process.env.PASSWORD));
 
 // Bootstrap application settings
 app.use(express.static('./public')); // load UI from public folder
@@ -38,6 +50,8 @@ var assistant = new watson.AssistantV1({
 
 // Endpoint to be call from the client side
 app.post('/api/message', function(req, res) {
+  logger.info('/api/message is called');
+
   var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
   if (!workspace || workspace === '<workspace-id>') {
     return res.json({
@@ -68,10 +82,17 @@ app.post('/api/message', function(req, res) {
  * @return {Object}          The response with the updated message
  */
 function updateMessage(input, response) {
+
+  logger.info("updateMessage started");
+
   var responseText = null;
   if (!response.output) {
     response.output = {};
   } else {
+    
+    logger.info("response.output.text = "+response.output.text);
+    logger.info("response.context.qtype = "+response.context.qtype);
+
     return response;
   }
   if (response.intents && response.intents[0]) {
@@ -90,7 +111,10 @@ function updateMessage(input, response) {
     }
   }
   response.output.text = responseText;
-  return response;
+
+  logger.info("responseText = "+responseText);
+
+  uth = require('basic-auth-connect');return response;
 }
 
 module.exports = app;

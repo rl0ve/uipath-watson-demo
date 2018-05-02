@@ -1,0 +1,10 @@
+[2018-05-02 22:42:59.373] [INFO] system - started
+[2018-05-02 22:43:17.474] [INFO] system - /api/message is called
+[2018-05-02 22:43:18.487] [INFO] system - updateMessage started
+[2018-05-02 22:43:18.490] [INFO] system - response.output.text = Hello. How can I help you?
+[2018-05-02 22:43:18.496] [INFO] system - response.context.qtype = undefined
+[2018-05-02 22:51:00.272] [INFO] system - started
+[2018-05-02 22:51:25.596] [INFO] system - /api/message is called
+[2018-05-02 22:51:26.663] [INFO] system - updateMessage started
+[2018-05-02 22:51:26.671] [INFO] system - response.output.text = Hello. How can I help you?
+[2018-05-02 22:51:26.677] [INFO] system - response.context.qtype = undefined
