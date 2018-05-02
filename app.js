@@ -32,7 +32,7 @@ var app = express();
 
 // Basic Auth
 
-app.use(basicAuth(process.env.USERNAME, process.env.PASSWORD));
+app.use(basicAuth(process.env.AUTH_USERNAME, process.env.AUTH_PASSWORD));
 
 // Bootstrap application settings
 app.use(express.static('./public')); // load UI from public folder

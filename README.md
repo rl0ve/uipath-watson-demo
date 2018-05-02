@@ -65,17 +65,7 @@ G    ```
     ASSISTANT_PASSWORD=87iT7aqpvU7l
     ```
 
-1. In your IBM Cloud console, open the Watson Assistant service instance where you imported the workspace.
-
-1. Click the menu icon in the upper-right corner of the workspace tile, and then select **View details**.
-
-    ![Screen capture of workspace tile menu](readme_images/workspace_details.png)
-
-1. Click the ![Copy](readme_images/copy_icon.png) icon to copy the workspace ID to the clipboard.
-
-1. On the local system, paste the workspace ID into the WORKSPACE_ID variable in the `.env` file. Save and close the file.
-
-### Installing and starting the app
+### Installing and starting the app locally
 
 1. Install the demo app package into the local Node.js runtime environment:
 
@@ -128,35 +118,8 @@ You can use Cloud Foundry to deploy your local version of the app to IBM Cloud.
   ```
   Access your app on IBM Cloud at the URL specified in the command output.
 
-## Troubleshooting
-
-If you encounter a problem, you can check the logs for more information. To see the logs, run the `cf logs` command:
-
-```none
-cf logs <application-name> --recent
-```
 
 ## License
 
 This sample code is licensed under Apache 2.0.
 Full license text is available in [LICENSE](LICENSE).
-
-## Contributing
-
-See [CONTRIBUTING](CONTRIBUTING.md).
-
-## Open Source @ IBM
-
-Find more open source projects on the
-[IBM Github Page](http://ibm.github.io/).
-
-
-[cf_docs]: (https://console.bluemix.net/docs/services/watson/getting-started-cf.html)
-[cloud_foundry]: https://github.com/cloudfoundry/cli#downloads
-[demo_url]: http://conversation-simple.ng.bluemix.net/
-[doc_intents]: (https://console.bluemix.net/docs/services/conversation/intents-entities.html#planning-your-entities)
-[docs]: https://console.bluemix.net/docs/services/conversation/index.html
-[docs_landing]: (https://console.bluemix.net/docs/services/conversation/index.html)
-[node_link]: (http://nodejs.org/)
-[npm_link]: (https://www.npmjs.com/)
-[sign_up]: bluemix.net/registration
