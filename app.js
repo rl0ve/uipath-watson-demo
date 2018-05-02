@@ -91,7 +91,6 @@ function updateMessage(input, response) {
   } else {
     
     logger.info("response.output.text = "+response.output.text);
-    logger.info("response.context.qtype = "+response.context.qtype);
 
     return response;
   }

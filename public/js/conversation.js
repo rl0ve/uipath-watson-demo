@@ -155,13 +155,44 @@ var ConversationPanel = (function() {
 
   // Constructs new DOM element from a message payload
   function buildMessageDomElements(newPayload, isUser) {
+
     var textArray = isUser ? newPayload.input.text : newPayload.output.text;
+//    var listArray = newPayload.context.olist ? newPayload.context.olist : [];
+    var listArray = isUser ? [] : newPayload.context.olist;
+
     if (Object.prototype.toString.call( textArray ) !== '[object Array]') {
       textArray = [textArray];
     }
     var messageArray = [];
+    var optionArray = [];
+    var counter = 0;
+
+
+    listArray.forEach(function(currentOption){
+
+      if (currentOption) {
+        var optionJson = {
+          'tagName': 'li',
+          'classNames': ['option-item'],
+          'text': currentOption
+        }
+
+        optionArray.push(optionJson);
+      }
+    });
+
 
     textArray.forEach(function(currentText) {
+
+
+      if (counter == textArray.length - 1){
+        option = optionArray;
+      }
+      else {
+        option = [];
+      }
+
+
       if (currentText) {
         var messageJson = {
           // <div class='segments'>
@@ -178,13 +209,19 @@ var ConversationPanel = (function() {
               'children': [{
                 // <p>{messageText}</p>
                 'tagName': 'p',
-                'text': currentText
+                'text': currentText,
+                'children': [{
+                  'tagName': 'ul',
+                  'children': option
+                }]
               }]
             }]
           }]
         };
         messageArray.push(Common.buildDomElement(messageJson));
       }
+
+      counter = counter + 1;
     });
 
     return messageArray;

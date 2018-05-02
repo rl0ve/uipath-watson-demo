@@ -1,10 +1,31 @@
-[2018-05-02 22:42:59.373] [INFO] system - started
-[2018-05-02 22:43:17.474] [INFO] system - /api/message is called
-[2018-05-02 22:43:18.487] [INFO] system - updateMessage started
-[2018-05-02 22:43:18.490] [INFO] system - response.output.text = Hello. How can I help you?
-[2018-05-02 22:43:18.496] [INFO] system - response.context.qtype = undefined
-[2018-05-02 22:51:00.272] [INFO] system - started
-[2018-05-02 22:51:25.596] [INFO] system - /api/message is called
-[2018-05-02 22:51:26.663] [INFO] system - updateMessage started
-[2018-05-02 22:51:26.671] [INFO] system - response.output.text = Hello. How can I help you?
-[2018-05-02 22:51:26.677] [INFO] system - response.context.qtype = undefined
+[2018-05-03 00:46:44.431] [INFO] system - updateMessage started
+[2018-05-03 00:46:44.434] [INFO] system - response.output.text = I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.
+[2018-05-03 00:46:44.435] [INFO] system - response.context.qtype = undefined
+[2018-05-03 00:47:04.104] [INFO] system - /api/message is called
+[2018-05-03 00:47:04.960] [INFO] system - updateMessage started
+[2018-05-03 00:47:04.962] [INFO] system - response.output.text = Hello. How can I help you?
+[2018-05-03 00:47:04.963] [INFO] system - response.context.qtype = undefined
+[2018-05-03 00:47:22.794] [INFO] system - /api/message is called
+[2018-05-03 00:47:23.577] [INFO] system - updateMessage started
+[2018-05-03 00:47:23.579] [INFO] system - response.output.text = OK, I'll reset your password,Hello. How can I help you?
+[2018-05-03 00:47:23.581] [INFO] system - response.context.qtype = undefined
+[2018-05-03 00:47:27.471] [INFO] system - /api/message is called
+[2018-05-03 00:47:28.306] [INFO] system - updateMessage started
+[2018-05-03 00:47:28.307] [INFO] system - response.output.text = Sorry, this service is under construction,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.,I didn't understand. You can try rephrasing.,Can you reword your statement? I'm not understanding.,I didn't get your meaning.
+[2018-05-03 00:47:28.309] [INFO] system - response.context.qtype = undefined
+[2018-05-03 00:48:52.975] [INFO] system - /api/message is called
+[2018-05-03 00:48:53.727] [INFO] system - updateMessage started
+[2018-05-03 00:48:53.733] [INFO] system - response.output.text = Hello. How can I help you?
+[2018-05-03 00:48:53.735] [INFO] system - response.context.qtype = undefined
+[2018-05-03 00:48:57.155] [INFO] system - /api/message is called
+[2018-05-03 00:48:57.760] [INFO] system - updateMessage started
+[2018-05-03 00:48:57.767] [INFO] system - response.output.text = Sorry, this service is under construction,Hello. How can I help you?
+[2018-05-03 00:48:57.811] [INFO] system - response.context.qtype = undefined
+[2018-05-03 00:49:02.041] [INFO] system - /api/message is called
+[2018-05-03 00:49:03.609] [INFO] system - updateMessage started
+[2018-05-03 00:49:03.611] [INFO] system - response.output.text = Sorry, this service is under construction,Hello. How can I help you?
+[2018-05-03 00:49:03.613] [INFO] system - response.context.qtype = undefined
+[2018-05-03 00:49:07.297] [INFO] system - /api/message is called
+[2018-05-03 00:49:08.063] [INFO] system - updateMessage started
+[2018-05-03 00:49:08.065] [INFO] system - response.output.text = OK, I'll reset your password,Hello. How can I help you?
+[2018-05-03 00:49:08.066] [INFO] system - response.context.qtype = undefined
