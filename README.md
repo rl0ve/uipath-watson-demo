@@ -1,10 +1,8 @@
-# Watson Assistant (formerly Conversation) Sample Application [![Build Status](https://travis-ci.org/watson-developer-cloud/assistant-simple.svg?branch=master)](http://travis-ci.org/watson-developer-cloud/assistant-simple) [![codecov.io](https://codecov.io/github/watson-developer-cloud/assistant-simple/coverage.svg?branch=master)](https://codecov.io/github/watson-developer-cloud/assistant-simple?branch=master)
+# Sample application to demonstrate UiPath - Watson integration
 
 This Node.js app demonstrates the Watson Assistant service in a simple chat interface simulating a cognitive car dashboard.
 
-![Demo](readme_images/demo.gif)
 
-You can view a [demo][demo_url] of this app.
 
 ## Before you begin
 
@@ -16,13 +14,6 @@ You can view a [demo][demo_url] of this app.
 
       Note: Ensure that you Cloud Foundry version is up to date
 
-## Installing locally
-
-If you want to modify the app or use it as a basis for building your own app, install it locally. You can then deploy your modified version of the app to IBM Cloud.
-
-### Getting the files
-
-Use GitHub to clone the repository locally, or [download the .zip file](https://github.com/watson-developer-cloud/assistant-simple/archive/master.zip) of the repository and extract the files.
 
 ### Setting up the Watson Assistant service
 
@@ -40,22 +31,6 @@ You can use an exisiting instance of the Watson Assistant service. Otherwise, fo
     ```bash
     cf create-service conversation free my-watson-assistant-service
     ```
-
-### Importing the Watson Assistant workspace
-
-1. In your browser, navigate to [your IBM Cloud console] (https://console.ng.bluemix.net/dashboard/services).
-
-1. From the **All Items** tab, click the newly created Watson Assistant service in the **Services** list.
-
-    ![Screen capture of Services list](readme_images/conversation_service.png)
-
-1. On the Service Details page, click **Launch tool**.
-
-1. Click the **Import workspace** icon in the Watson Assistant service tool. Specify the location of the workspace JSON file in your local copy of the app project:
-
-    `<project_root>/training/car_workspace.json`
-
-1. Select **Everything (Intents, Entities, and Dialog)** and then click **Import**. The car dashboard workspace is created.
 
 ### Configuring the app environment
 
@@ -85,7 +60,7 @@ You can use an exisiting instance of the Watson Assistant service. Otherwise, fo
 
 1. Paste  the `password` and `username` values (without quotation marks) from the JSON into the `ASSISTANT_PASSWORD` and `ASSISTANT_USERNAME` variables in the `.env` file. For example:
 
-    ```
+G    ```
     ASSISTANT_USERNAME=ca2905e6-7b5d-4408-9192-e4d54d83e604
     ASSISTANT_PASSWORD=87iT7aqpvU7l
     ```
@@ -116,39 +91,6 @@ You can use an exisiting instance of the Watson Assistant service. Otherwise, fo
 
 1. Point your browser to http://localhost:3000 to try out the app.
 
-## Testing the app
-
-After your app is installed and running, experiment with it to see how it responds.
-
-The chat interface is on the left, and the JSON that the JavaScript code receives from the Watson Assistant service is on the right. Your questions and commands are interpreted using a small set of sample data trained with the following intents:
-
-    turn_on
-    turn_off
-    turn_up
-    turn_down
-    traffic_update
-    locate_amenity
-    weather
-    phone
-    capabilities
-    greetings
-    goodbyes
-
-Type a request, such as `music on` or `I want to turn on the windshield wipers`. The system understands your intent and responds. You can see the details of how your input was understood by examining the JSON data in the `Watson understands` section on the right side.
-
-For example, if you type `Turn on some music`, the JSON data shows that the system understood the `turn_on` intent with a high level of confidence, along with the `appliance` entity with a value of `music`.
-
-For more information about intents, see the [Watson Assistant service documentation][doc_intents].
-
-To see details of how these intents are defined, including sample input for each intent, launch the Watson Assistant tool.
-
-## Modifying the app
-
-After you have the app deployed and running, you can explore the source files and make changes. Try the following:
-
-* Modify the .js files to change the app logic.
-* Modify the .html file to change the appearance of the app page.
-* Use the Watson Assistant tool to train the service for new intents, or to modify the dialog flow. For more information, see the [Watson Assistant service documentation][docs_landing].
 
 ## Deploying to IBM Cloud
 
