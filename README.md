@@ -65,6 +65,16 @@ G    ```
     ASSISTANT_PASSWORD=87iT7aqpvU7l
     ```
 
+1. Setup other parameters for UiPath in the `.env` file.
+
+    ```
+    AUTH_USERNAME=<Username for Authentication>
+    AUTH_PASSWORD=<Password for Authentication>
+    UIPATH_AUTH_TENANT=<Tenant for UiPath Orchestrator>
+    UIPATH_AUTH_USERNAME=<Username for UiPath Orchestrator>
+    UIPATH_AUTH_PASSWORD=<Password for UiPath Orchestrator>
+    ```
+
 ### Installing and starting the app locally
 
 1. Install the demo app package into the local Node.js runtime environment:
@@ -100,13 +110,13 @@ You can use Cloud Foundry to deploy your local version of the app to IBM Cloud.
      label: conversation
      plan: free
   applications:
-  - name: conversation-simple-app-test1
+  - name: <Application Name>
    command: npm start
    path: .
    memory: 256M
    instances: 1
    services:
-   - my-watson-assistant-service
+   - <Service Name of Watson Assistant>
    env:
      NPM_CONFIG_PRODUCTION: false
   ```
