@@ -17,7 +17,8 @@
 'use strict';
 
 var express = require('express'); // app server
-var basicAuth = require('basic-auth-connect');
+var request = require('request'); // for http request
+var basicAuth = require('basic-auth-connect'); // for basic auth
 var bodyParser = require('body-parser'); // parser for post requests
 var watson = require('watson-developer-cloud'); // watson sdk
 var log4js = require('log4js');
@@ -48,7 +49,7 @@ var assistant = new watson.AssistantV1({
   version: '2018-02-16'
 });
 
-// Endpoint to be call from the client side
+// Endpoint to be call for IBM Watson
 app.post('/api/message', function(req, res) {
   logger.info('/api/message is called');
 
@@ -72,6 +73,75 @@ app.post('/api/message', function(req, res) {
       return res.status(err.code || 500).json(err);
     }
     return res.json(updateMessage(payload, data));
+  });
+});
+
+// Endpoint to be called for UiPath Orchestrator
+app.post('/api/queue', function(req, res){
+  logger.info('/api/queue is called');
+
+  var json_body = null;
+  var token = null;
+  var queueName = req.body.queueName;
+
+  logger.info('queueName: ' + queueName);
+
+  // Authentication
+  var headers = {
+    'Content-Type': 'application/json'
+  }
+
+  var options = {
+    url: process.env.UIPATH_AUTH_ENDPOINT,
+    method: 'POST',
+    headers: headers,
+    form: {
+      tenancyName: process.env.UIPATH_AUTH_TENANT,
+      usernameOrEmailAddress: process.env.UIPATH_AUTH_USERNAME,
+      password: process.env.UIPATH_AUTH_PASSWORD
+    }
+  }
+
+  logger.info('send request for auth');
+
+  request(options, function (error, response, body){
+    json_body = JSON.parse(body);
+    token = json_body.result;
+
+    if (!error && response.statusCode == 200){
+
+      // Add Queue Item
+      var headers = {
+        'Authorization': 'Bearer '+ token,
+        'Content-Type': 'application/json'
+      }
+      var options = {
+        url: process.env.UIPATH_QUEUE_ENDPOINT,
+        method: 'POST',
+        headers: headers,
+        json: true,
+        body: {
+          itemData: {
+            Name: queueName,
+            Priority: process.env.UIPATH_QUEUE_PRIORITY,
+            SpecificContent: {
+              ParamA: 'dummy',
+              ParamB: 'dummy',
+              ParamC: 'dummy'
+            },
+            DeferDate: null,
+            DueDate: null,
+            Reference: 'demo process'
+          }
+        }
+      }
+
+      logger.info('add queue item');
+
+      request(options, function (error, response, body){
+        logger.info('body: '+ JSON.stringify(body));
+      });
+    }
   });
 });
 
@@ -113,7 +183,7 @@ function updateMessage(input, response) {
 
   logger.info("responseText = "+responseText);
 
-  uth = require('basic-auth-connect');return response;
+  return response;
 }
 
 module.exports = app;

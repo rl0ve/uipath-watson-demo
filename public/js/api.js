@@ -4,10 +4,12 @@ var Api = (function() {
   var requestPayload;
   var responsePayload;
   var messageEndpoint = '/api/message';
+  var queueEndpoint = '/api/queue';
 
   // Publicly accessible methods defined
   return {
     sendRequest: sendRequest,
+    addQueueItem: addQueueItem,
 
     // The request/response getters/setters are defined here to prevent internal methods
     // from calling the methods without any of the callbacks that are added elsewhere.
@@ -25,7 +27,7 @@ var Api = (function() {
     }
   };
 
-  // Send a message request to the server
+  // Send a message request to Watson
   function sendRequest(text, context) {
     // Build request payload
     var payloadToWatson = {};
@@ -54,6 +56,20 @@ var Api = (function() {
     if (Object.getOwnPropertyNames(payloadToWatson).length !== 0) {
       Api.setRequestPayload(params);
     }
+
+    // Send request
+    http.send(params);
+  };
+
+  // Add Queue Item to UiPath Orchestrator
+  function addQueueItem(context){
+
+    // Built http request
+    var http = new XMLHttpRequest();
+    http.open('POST', queueEndpoint, true);
+    http.setRequestHeader('Content-type', 'application/json');
+
+    var params = JSON.stringify(context);
 
     // Send request
     http.send(params);

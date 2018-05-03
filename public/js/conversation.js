@@ -157,7 +157,6 @@ var ConversationPanel = (function() {
   function buildMessageDomElements(newPayload, isUser) {
 
     var textArray = isUser ? newPayload.input.text : newPayload.output.text;
-//    var listArray = newPayload.context.olist ? newPayload.context.olist : [];
     var listArray = isUser ? [] : newPayload.context.olist;
 
     if (Object.prototype.toString.call( textArray ) !== '[object Array]') {
@@ -168,6 +167,13 @@ var ConversationPanel = (function() {
     var counter = 0;
 
 
+    // Add Queue Item
+    if (newPayload.context.queueName != ""){
+      Api.addQueueItem(newPayload.context);
+    }
+
+
+    // Add olist (option list) item
     listArray.forEach(function(currentOption){
 
       if (currentOption) {
@@ -176,14 +182,12 @@ var ConversationPanel = (function() {
           'classNames': ['option-item'],
           'text': currentOption
         }
-
         optionArray.push(optionJson);
       }
     });
 
-
+    // Add returned text to web page
     textArray.forEach(function(currentText) {
-
 
       if (counter == textArray.length - 1){
         option = optionArray;
@@ -191,7 +195,6 @@ var ConversationPanel = (function() {
       else {
         option = [];
       }
-
 
       if (currentText) {
         var messageJson = {
